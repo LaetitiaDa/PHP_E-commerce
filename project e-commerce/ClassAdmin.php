@@ -89,7 +89,7 @@ public function delete_user($id)
     {
         $this->id_delete= $id;
 
-            $bdd = $this->connect_db("localhost", "pool_php_rush", "root", "root");
+            $bdd = $this->connect_db();
             $sql_delete = "DELETE FROM users WHERE id='$this->id_delete'";
             $bdd->exec($sql_delete);
             header("Location:admin.php?admin=2");
@@ -102,7 +102,7 @@ public function delete_user($id)
 
 public function modify_user($user_name, $user_email, $user_password, $user_passwordc, $getid)
     {   $reg_exp= " /^[^\W][a-zA-Z0-9_]+(\.[a-zA-Z0-9_]+)*\@[a-zA-Z0-9_]+(\.[a-zA-Z0-9_]+)*\.[a-zA-Z]{2,4}$/ ";
-        $bdd = $this->connect_db("localhost", "pool_php_rush", "root", "root");
+        $bdd = $this->connect_db();
         
         $this->user_email = $user_email;
         $this->user_password = $user_password;
