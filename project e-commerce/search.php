@@ -22,7 +22,7 @@ else
 }
 
 
-$bdd = new PDO("mysql:host=localhost;dbname=pool_php_rush", "root", "root");
+$bdd = new PDO();
 /////////////// DISPLAY ALL PRODUCT ///////////
 if (empty($_POST['query']) && empty($_POST['min_price']) 
     && empty($_POST['max_price']) && empty($_POST['category'])){
