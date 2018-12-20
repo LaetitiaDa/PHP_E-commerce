@@ -21,7 +21,7 @@ session_start();
         header("Location:login.php");
 }
 
-    $bdd = new PDO("mysql:host=localhost;dbname=pool_php_rush", "root", "root");
+    $bdd = new PDO();
 
     if(empty($_POST['category']))
         {
