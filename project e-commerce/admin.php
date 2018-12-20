@@ -13,7 +13,7 @@ session_start();
 
 
 // CONNECT TO DATABASE
-ADMIN::connect_db("localhost", "pool_php_rush", "root", "root");
+ADMIN::connect_db();
 $admin = new ADMIN("", "", "");
 
 ///////////////////////////////CREATE USER//////////////////////////
@@ -31,7 +31,7 @@ if (!empty($_POST))
 
 if($_GET['admin']==2) 
 { 
-    $bdd = $admin->connect_db("localhost", "pool_php_rush", "root", "root"); 
+    $bdd = $admin->connect_db(); 
     $sql_query_delete="SELECT id, username, email FROM users";
     $response_delete = $bdd->query($sql_query_delete);
 
@@ -46,14 +46,14 @@ if($_GET['admin']==2)
 
 if($_GET['admin']==4) 
 { 
-    $bdd = $admin->connect_db("localhost", "pool_php_rush", "root", "root"); 
+    $bdd = $admin->connect_db(); 
     $sql_query_display="SELECT id, username, email FROM users";
     $response_display = $bdd->query($sql_query_display);
 
     $idget=$_GET['id'];
     if($idget!=null)
     {
-        $bdd = $admin->connect_db("localhost", "pool_php_rush", "root", "root"); 
+        $bdd = $admin->connect_db(); 
         $sql_query_display_info="SELECT id, username, email FROM users WHERE id='$idget'";
         $response_display_info = $bdd->query($sql_query_display_info);
         $result_display_info = $response_display_info->fetch();
@@ -65,14 +65,14 @@ if($_GET['admin']==4)
 
 if($_GET['admin']==3) 
 { 
-    $bdd = $admin->connect_db("localhost", "pool_php_rush", "root", "root"); 
+    $bdd = $admin->connect_db(); 
     $sql_query_modify="SELECT id, username, email FROM users";
     $response_modify = $bdd->query($sql_query_modify);
 
     $idget=$_GET['id'];
     if($idget!=null)
     {
-        $bdd = $admin->connect_db("localhost", "pool_php_rush", "root", "root"); 
+        $bdd = $admin->connect_db(); 
         $sql_query_modify_info="SELECT id, username, email FROM users WHERE id='$idget'";
         $response_modify_info = $bdd->query($sql_query_modify_info);
         $result_modify_info = $response_modify_info->fetch();
@@ -86,7 +86,7 @@ if($_GET['admin']==3)
 
         if($_GET['admin']==5)
         {
-            $bdd = $admin->connect_db("localhost", "pool_php_rush", "root", "root"); 
+            $bdd = $admin->connect_db(); 
             $sql_query_create_cat="SELECT id, name FROM categories";
             $response_create_cat = $bdd->query($sql_query_create_cat);
 
@@ -98,7 +98,7 @@ if($_GET['admin']==3)
 
 if($_GET['admin']==6) 
 { 
-$bdd = $admin->connect_db("localhost", "pool_php_rush", "root", "root"); 
+$bdd = $admin->connect_db(); 
 $sql_query_delete="SELECT id, name, price FROM products";
 $response_delete = $bdd->query($sql_query_delete);
 
@@ -113,14 +113,14 @@ if($idget!=null)
 
 if($_GET['admin']==7) 
 { 
-$bdd = $admin->connect_db("localhost", "pool_php_rush", "root", "root"); 
+$bdd = $admin->connect_db(); 
 $sql_query_display="SELECT id, name, price FROM products ";
 $response_display = $bdd->query($sql_query_display);
 
 $idget=$_GET['id'];
 if($idget!=null)
 {
-    $bdd = $admin->connect_db("localhost", "pool_php_rush", "root", "root"); 
+    $bdd = $admin->connect_db(); 
     $sql_query_display_info="SELECT products.id, products.name, products.price, categories.name AS category FROM products JOIN categories ON products.category_id=categories.id WHERE products.id='$idget'";
     $response_display_info = $bdd->query($sql_query_display_info);
     $result_display_info = $response_display_info->fetch();
@@ -132,14 +132,14 @@ if($idget!=null)
 
 if($_GET['admin']==8) 
 { 
-    $bdd = $admin->connect_db("localhost", "pool_php_rush", "root", "root"); 
+    $bdd = $admin->connect_db(); 
     $sql_query_modify="SELECT id, name, price FROM products";
     $response_modify = $bdd->query($sql_query_modify);
 
     $idget=$_GET['id'];
     if($idget!=null)
     {
-        $bdd = $admin->connect_db("localhost", "pool_php_rush", "root", "root"); 
+        $bdd = $admin->connect_db(); 
         $sql_query_modify_info="SELECT products.id, products.name, products.price, categories.name AS category FROM products JOIN categories ON products.category_id=categories.id WHERE products.id='$idget'";
         $response_modify_info = $bdd->query($sql_query_modify_info);
         $result_modify_info = $response_modify_info->fetch();
