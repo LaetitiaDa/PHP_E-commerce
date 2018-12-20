@@ -4,9 +4,9 @@ class user{
 
 //________Attribute for connect_db
     // public $host = "localhost";
-    // public $db = "pool_php_rush";
-    // public $username = "root";
-    // public $passwd = "root";
+    // public $db =;
+    // public $username =;
+    // public $passwd =;
 
 //__________Attribute to login
     public $name;
@@ -45,7 +45,7 @@ class user{
     }
 
     public function login($email=NULL, $password=NULL,$checkbox=NULL){
-            $bdd = $this->connect_db("localhost", "pool_php_rush", "root", "root");
+            $bdd = $this->connect_db();
             $this->email = $email;
             $this->password = $password;
             $this->checkbox = $checkbox;
