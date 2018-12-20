@@ -10,3 +10,4 @@ It has the following functionalities:
 4. Search engine by product, price and categories of product
 5. Administrator page that allows to delete, create and modify users, products and categories.
 
+As first project, I learned afterwards how to better structure a website using MVC.
