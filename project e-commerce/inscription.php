@@ -4,7 +4,7 @@ require_once("user.php");
 
 // CONNECT TO DATABASE
 
-user::connect_db("localhost", "pool_php_rush", "root", "root");
+user::connect_db();
 
 
 //REGISTER IN DATABASE
